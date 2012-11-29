@@ -1,4 +1,4 @@
-long-range-targets
+Long range targets
 ==================
 
 Targets for long range shooting
