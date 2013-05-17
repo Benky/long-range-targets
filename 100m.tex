@@ -27,6 +27,15 @@
   \end{scope}
 }
 
+\newcommand\benkysCrossWhite{
+  \draw[line width=3.5mm] (-1 * \OneMOA, 0)--(1 * \OneMOA ,0);
+  \draw[line width=3.5mm] (0, -1 * \OneMOA)--(0, 1 * \OneMOA);
+  \draw[color=black] (0.5in ,0.5in) rectangle (-0.5in , -0.5in);
+  \begin{scope}
+    \draw[color=black, fill=white, rotate around={45:(0, 0)}] (\OneMOA /4 ,\OneMOA /4) rectangle (-\OneMOA /4 , -\OneMOA /4);
+  \end{scope}
+}
+
 \begin{tikzpicture}
   \begin{scope}[shift={(5,5)}]
     \benkysCross
@@ -45,6 +54,27 @@
   \end{scope}
   \begin{scope}[shift={(25, 15)}]
     \benkysCross
+  \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \begin{scope}[shift={(5,5)}]
+    \benkysCrossWhite
+  \end{scope}
+  \begin{scope}[shift={(15, 5)}]
+    \benkysCrossWhite
+  \end{scope}
+  \begin{scope}[shift={(25, 5)}]
+    \benkysCrossWhite
+  \end{scope}
+  \begin{scope}[shift={(5,15)}]
+    \benkysCrossWhite
+  \end{scope}
+  \begin{scope}[shift={(15, 15)}]
+    \benkysCrossWhite
+  \end{scope}
+  \begin{scope}[shift={(25, 15)}]
+    \benkysCrossWhite
   \end{scope}
 \end{tikzpicture}
 
