@@ -3,7 +3,7 @@
 \documentclass{article}
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[top=12mm,left=12mm,right=0mm,bottom=0mm,a4paper,landscape]{geometry}
+\usepackage[top=10mm,left=10mm,right=0mm,bottom=0mm,a4paper,landscape]{geometry}
 \usepackage{verbatim}
 
 \begin{document}
@@ -18,7 +18,36 @@
 \newcommand{\horizontalCellsNum}{9}
 \newcommand{\verticalCellsNum}{6}
 
-% 0.5MOA 3x circles, 100m
+
+% Red diamond with cross
+\newcommand\benkysCross{
+  \draw[line width=7mm] (-1 * \OneMOA, 0)--(1 * \OneMOA ,0);
+  \draw[line width=7mm] (0, -1 * \OneMOA)--(0, 1 * \OneMOA);
+  \begin{scope}
+    \draw[color=black, fill=red, rotate around={45:(0, 0)}] (\OneMOA /4 ,\OneMOA /4) rectangle (-\OneMOA /4 , -\OneMOA /4);
+  \end{scope}
+  \draw[color=black] (0.5in ,0.5in) rectangle (-0.5in , -0.5in);
+}
+
+% Precision target - 300m
+\begin{tikzpicture}
+  \begin{scope}[shift={(0mm,0mm)}]
+    \draw[color=gray, line width=1mm] (0,0) grid[xstep=(0.25*\OneMOA), ystep=(0.25*\OneMOA)] (3*\OneMOA,2.25*\OneMOA);
+  \end{scope}
+
+  \begin{scope}[shift={(0mm,0mm)}]
+    \draw[color=gray, line width=2mm, dotted] (0,0) grid[xstep=(\OneMOA), ystep=(\OneMOA)] (3*\OneMOA,2.25*\OneMOA);
+  \end{scope}
+
+  %\draw[color=gray, line width=2mm] (0,0) grid[xstep=(0.5*\OneMOA), ystep=(0.5*\OneMOA)] (3*\OneMOA,2.25*\OneMOA);
+
+  \begin{scope}[shift={(131mm,10cm)}]
+    \benkysCross
+  \end{scope}
+
+\end{tikzpicture}
+
+% Sighting circle, 300m
 \begin{tikzpicture}
   \begin{scope}
     \draw [color=red, line width=3mm] (0, -\OneMOA) -- (0, \OneMOA);
