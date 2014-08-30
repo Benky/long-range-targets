@@ -67,4 +67,24 @@
   \end{scope}
 \end{tikzpicture}
 
+% Sighting circle, 300m
+\begin{tikzpicture}
+  \begin{scope}
+    \draw [color=black, line width=3mm] (0, -\OneMOA) -- (0, \OneMOA);
+    \draw [color=black, line width=3mm] (-\OneMOA, 0) -- (\OneMOA, 0);
+
+    \draw [color=black,line width=10mm] (-\OneMOA, 0) -- (-0.75*\OneMOA, 0);
+    \draw [color=black,line width=10mm] (\OneMOA, 0) -- (0.75*\OneMOA, 0);
+    \draw [color=black,line width=10mm] (0, \OneMOA) -- (0, 0.75*\OneMOA);
+    \draw [color=black,line width=10mm] (0, -\OneMOA) -- (0, -0.75*\OneMOA);
+
+    \draw [color=black, line width=8mm] (0, 0) circle[radius=\OneMOA)];
+    \draw [color=black ] (0, 0) circle[radius=\OneMOA/2];
+    \draw [color=black  ] (0, 0) circle[radius=\OneMOA/4];
+    \draw [color=black  ] (0, 0) circle[radius=(3*\OneMOA)/4];
+    \draw [color=black, fill=white, line width=3mm] (0, 0) circle[radius=\OneMOA/8];
+
+  \end{scope}
+\end{tikzpicture}
+
 \end{document}
