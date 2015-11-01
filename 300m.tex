@@ -11,6 +11,7 @@
 % 1MoA = ((2*Pi*300)/(360*60))*100
 \newcommand{\OneInch}{1in}
 \newcommand{\OneMOA}{87.26646259971647mm}
+\newcommand{\circleStep}{24mm}
 
 \newcommand{\horizontalStepSize}{\OneMOA}
 \newcommand{\verticalStepSize}{\OneMOA}
@@ -28,6 +29,37 @@
   \end{scope}
   \draw[color=black] (0.5in ,0.5in) rectangle (-0.5in , -0.5in);
 }
+
+% Precision target - 300m
+\begin{tikzpicture}
+  \begin{scope}[shift={(0mm,0mm)}]
+    \draw[line width=3.5mm] (-6mm, 0mm) -- (6mm, 0mm);
+    \draw[line width=3.5mm] (0mm, -6mm) -- (0mm, 6mm);
+    \draw[line width=1mm] (0in, 0in) circle (\circleStep/2);
+    \draw[line width=1mm] (0in, 0in) circle (\circleStep);
+    \draw[line width=1mm] (0in, 0in) circle (2 * \circleStep);
+    \draw[line width=1mm] (0in, 0in) circle (3 * \circleStep);
+    \draw[line width=3mm] (0in, 0in) circle (4 * \circleStep);
+
+    \node[scale=3.0] at (0mm, 1.5 * \circleStep) {\large \textbf{9}};
+    \node[scale=3.0] at (0mm, -1.5 * \circleStep) {\large \textbf{9}};
+    \node[scale=3.0] at (1.5 * \circleStep, 0mm) {\large \textbf{9}};
+    \node[scale=3.0] at (-1.5 * \circleStep, 0mm) {\large \textbf{9}};
+
+    \node[scale=3.0] at (0mm, 2.5 * \circleStep) {\large \textbf{8}};
+    \node[scale=3.0] at (0mm, -2.5 * \circleStep) {\large \textbf{8}};
+    \node[scale=3.0] at (2.5 * \circleStep, 0mm) {\large \textbf{8}};
+    \node[scale=3.0] at (-2.5 * \circleStep, 0mm) {\large \textbf{8}};
+
+    \node[scale=3.0] at (0mm, 3.5 * \circleStep) {\large \textbf{7}};
+    \node[scale=3.0] at (0mm, -3.5 * \circleStep) {\large \textbf{7}};
+    \node[scale=3.0] at (3.5 * \circleStep, 0mm) {\large \textbf{7}};
+    \node[scale=3.0] at (-3.5 * \circleStep, 0mm) {\large \textbf{7}};
+\end{scope}
+
+\end{tikzpicture}
+
+
 
 % Precision target - 300m
 \begin{tikzpicture}
