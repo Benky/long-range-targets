@@ -11,7 +11,7 @@
 % 1MoA = ((2*Pi*300)/(360*60))*100
 \newcommand{\OneInch}{1in}
 \newcommand{\OneMOA}{87.26646259971647mm}
-\newcommand{\circleStep}{24mm}
+\newcommand{\circleStep}{25mm}
 
 \newcommand{\horizontalStepSize}{\OneMOA}
 \newcommand{\verticalStepSize}{\OneMOA}
@@ -51,65 +51,4 @@
     \node[scale=3.0] at (-2.5 * \circleStep, 0mm) {\large \textbf{8}};
 \end{scope}
 \end{tikzpicture}
-
-
-
-% Precision target - 300m
-\begin{tikzpicture}
-  \begin{scope}[shift={(0mm,0mm)}]
-    \draw[color=gray, line width=1mm] (0,0) grid[xstep=(0.25*\OneMOA), ystep=(0.25*\OneMOA)] (3*\OneMOA,2.25*\OneMOA);
-  \end{scope}
-
-  \begin{scope}[shift={(0mm,0mm)}]
-    \draw[color=gray, line width=2mm, dotted] (0,0) grid[xstep=(\OneMOA), ystep=(\OneMOA)] (3*\OneMOA,2.25*\OneMOA);
-  \end{scope}
-
-  %\draw[color=gray, line width=2mm] (0,0) grid[xstep=(0.5*\OneMOA), ystep=(0.5*\OneMOA)] (3*\OneMOA,2.25*\OneMOA);
-
-  \begin{scope}[shift={(131mm,10cm)}]
-    \benkysCross
-  \end{scope}
-
-\end{tikzpicture}
-
-% Sighting circle, 300m
-\begin{tikzpicture}
-  \begin{scope}
-    \draw [color=red, line width=3mm] (0, -\OneMOA) -- (0, \OneMOA);
-    \draw [color=red, line width=3mm] (-\OneMOA, 0) -- (\OneMOA, 0);
-
-    \draw [color=red,line width=10mm] (-\OneMOA, 0) -- (-0.75*\OneMOA, 0);
-    \draw [color=red,line width=10mm] (\OneMOA, 0) -- (0.75*\OneMOA, 0);
-    \draw [color=red,line width=10mm] (0, \OneMOA) -- (0, 0.75*\OneMOA);
-    \draw [color=red,line width=10mm] (0, -\OneMOA) -- (0, -0.75*\OneMOA);
-
-    \draw [color=red, line width=8mm] (0, 0) circle[radius=\OneMOA)];
-    \draw [color=red ] (0, 0) circle[radius=\OneMOA/2];
-    \draw [color=red  ] (0, 0) circle[radius=\OneMOA/4];
-    \draw [color=red  ] (0, 0) circle[radius=(3*\OneMOA)/4];
-    \draw [color=red, fill=white, line width=3mm] (0, 0) circle[radius=\OneMOA/8];
-
-  \end{scope}
-\end{tikzpicture}
-
-% Sighting circle, 300m
-\begin{tikzpicture}
-  \begin{scope}
-    \draw [color=black, line width=3mm] (0, -\OneMOA) -- (0, \OneMOA);
-    \draw [color=black, line width=3mm] (-\OneMOA, 0) -- (\OneMOA, 0);
-
-    \draw [color=black,line width=10mm] (-\OneMOA, 0) -- (-0.75*\OneMOA, 0);
-    \draw [color=black,line width=10mm] (\OneMOA, 0) -- (0.75*\OneMOA, 0);
-    \draw [color=black,line width=10mm] (0, \OneMOA) -- (0, 0.75*\OneMOA);
-    \draw [color=black,line width=10mm] (0, -\OneMOA) -- (0, -0.75*\OneMOA);
-
-    \draw [color=black, line width=8mm] (0, 0) circle[radius=\OneMOA)];
-    \draw [color=black ] (0, 0) circle[radius=\OneMOA/2];
-    \draw [color=black  ] (0, 0) circle[radius=\OneMOA/4];
-    \draw [color=black  ] (0, 0) circle[radius=(3*\OneMOA)/4];
-    \draw [color=black, fill=white, line width=3mm] (0, 0) circle[radius=\OneMOA/8];
-
-  \end{scope}
-\end{tikzpicture}
-
 \end{document}
