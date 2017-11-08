@@ -1,0 +1,52 @@
+% Copyright (c) 2013 Benky
+% This program is made available under the terms of the MIT License.
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[top=12mm,left=12mm,right=0mm,bottom=0mm,a4paper,landscape]{geometry}
+\usepackage{verbatim}
+
+\begin{document}
+
+% 1MoA = ((2*Pi*200)/(360*60))*100
+\newcommand{\OneMOA}{58.148148148mm}
+\newcommand{\circleStep}{12mm}
+
+% Red diamond with cross
+\newcommand\knowYourLimits{
+  \draw [color=black, line width=2mm, dashed] (\OneMOA * 0.8, \OneMOA) -- (\OneMOA * 4, \OneMOA);
+  \draw [color=black, fill=white, line width=3mm] (\OneMOA * 0.8, \OneMOA) circle[radius=\OneMOA * 0.5];
+  \draw [color=black, fill=white, line width=3mm] (\OneMOA * 2.4, \OneMOA) circle[radius=\OneMOA * 0.3];
+  \draw [color=black, fill=white, line width=3mm] (\OneMOA * 3.4, \OneMOA) circle[radius=\OneMOA * 0.2];
+  \draw [color=black, fill=black] (\OneMOA * 4, \OneMOA) circle[radius=\OneMOA * 0.15];
+
+  \node[scale=6.0] at (\OneMOA * 0.8, \OneMOA) {\large \textbf{1}};
+  \node[scale=5.0] at (\OneMOA * 2.4, \OneMOA) {\large \textbf{2}};
+  \node[scale=3.0] at (\OneMOA * 3.4, \OneMOA) {\large \textbf{4}};
+  \node[color=white, scale=3.0] at (\OneMOA * 4, \OneMOA) {\large \textbf{8}};
+}
+
+\begin{tikzpicture}
+  \begin{scope}[shift={(3,5)}]
+    \knowYourLimits
+  \end{scope}
+  \begin{scope}[shift={(3,15)}]
+    \knowYourLimits
+  \end{scope}
+
+  %
+  % \begin{scope}
+  %   \draw [color=black, line width=2mm, dashed] (\OneMOA * 0.8, \OneMOA) -- (\OneMOA * 4, \OneMOA);
+  %   \draw [color=black, fill=white, line width=3mm] (\OneMOA * 0.8, \OneMOA) circle[radius=\OneMOA * 0.5];
+  %   \draw [color=black, fill=white, line width=3mm] (\OneMOA * 2.4, \OneMOA) circle[radius=\OneMOA * 0.3];
+  %   \draw [color=black, fill=white, line width=3mm] (\OneMOA * 3.4, \OneMOA) circle[radius=\OneMOA * 0.2];
+  %   \draw [color=black, fill=black] (\OneMOA * 4, \OneMOA) circle[radius=\OneMOA * 0.15];
+  %
+  %   \node[scale=6.0] at (\OneMOA * 0.8, \OneMOA) {\large \textbf{1}};
+  %   \node[scale=5.0] at (\OneMOA * 2.4, \OneMOA) {\large \textbf{2}};
+  %   \node[scale=3.0] at (\OneMOA * 3.4, \OneMOA) {\large \textbf{4}};
+  %   \node[color=white, scale=3.0] at (\OneMOA * 4, \OneMOA) {\large \textbf{8}};
+  % \end{scope}
+\end{tikzpicture}
+
+\end{document}
