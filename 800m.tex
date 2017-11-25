@@ -1,0 +1,48 @@
+% Copyright (c) 2013 Benky
+% This program is made available under the terms of the MIT License.
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[top=20mm,left=20mm,right=0mm,bottom=0mm,a0paper]{geometry}
+\usepackage{verbatim}
+
+\begin{document}
+
+\newcommand{\smallFont}{9.0}
+\newcommand{\largeFont}{15.0}
+\newcommand{\circleDistance}{75mm}
+\newcommand{\circleTen}{88.5mm}
+\newcommand{\baseOffset}{50mm}
+\newcommand{\xLength}{15mm}
+
+\begin{tikzpicture}
+  \begin{scope}[shift={(210mm,300mm)}]
+    \draw[line width=2mm, fill=black] (0cm, 0cm) circle (\circleTen+\circleDistance); % 9
+    \draw[line width=2mm, color=white, fill=black] (0cm, 0cm) circle (\circleTen); % 10
+    \draw[line width=2mm, color=black, fill=white] (-\baseOffset, -\baseOffset) rectangle (\baseOffset, \baseOffset); % box
+    \draw[line width=2mm, color=black, fill=white] (0cm, 0cm) circle (\circleDistance/2); % X    
+
+    \draw[line width=8mm] (-\xLength, -\xLength) -- (\xLength, \xLength);
+    \draw[line width=8mm] (-\xLength,  \xLength) -- (\xLength, -\xLength);
+    
+    \node[scale=\smallFont, color=white] at (0mm, 70mm) {\large \textbf{10}};
+    \node[scale=\largeFont, color=white] at (0mm, \baseOffset+\circleDistance) {\large \textbf{9}};
+    \node[scale=\smallFont, color=white] at (0mm, -70mm) {\large \textbf{10}};
+    \node[scale=\largeFont, color=white] at (0mm, -\baseOffset-\circleDistance) {\large \textbf{9}};
+    
+    \draw[line width=2mm] (0cm, 0cm) circle (\circleTen+2*\circleDistance);
+    \draw[line width=2mm] (0cm, 0cm) circle (\circleTen+3*\circleDistance);
+    \draw[line width=2mm] (0cm, 0cm) circle (\circleTen+4*\circleDistance);
+
+    \node[scale=\largeFont, color=black] at (\baseOffset+2*\circleDistance, 0mm) {\large \textbf{8}};
+    \node[scale=\largeFont, color=black] at (\baseOffset+3*\circleDistance, 0mm) {\large \textbf{7}};
+    \node[scale=\largeFont, color=black] at (\baseOffset+4*\circleDistance, 0mm) {\large \textbf{6}};        
+
+    \node[scale=\largeFont, color=black] at (-\baseOffset-2*\circleDistance, 0mm) {\large \textbf{8}};
+    \node[scale=\largeFont, color=black] at (-\baseOffset-3*\circleDistance, 0mm) {\large \textbf{7}};
+    \node[scale=\largeFont, color=black] at (-\baseOffset-4*\circleDistance, 0mm) {\large \textbf{6}};        
+\end{scope}
+\end{tikzpicture}
+
+
+\end{document}
