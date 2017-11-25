@@ -10,10 +10,12 @@
 
 \newcommand{\smallFont}{9.0}
 \newcommand{\largeFont}{15.0}
-\newcommand{\circleDistance}{75mm}
-\newcommand{\circleTen}{88.5mm}
-\newcommand{\baseOffset}{50mm}
-\newcommand{\xLength}{15mm}
+\newcommand{\circleDistance}{75mm} % distance between two circles (not valid for X-10 circles)
+\newcommand{\circleTen}{88.5mm} % radius of the 10 circle
+\newcommand{\baseOffset}{50mm} % some random number :)
+\newcommand{\xLength}{15mm} % half of the length of the X line
+\newcommand{\textTen}{\baseOffset/2+\circleTen/2}
+\newcommand{\textTenNeg}{-\baseOffset/2-\circleTen/2}
 
 \begin{tikzpicture}
   \begin{scope}[shift={(210mm,300mm)}]
@@ -25,9 +27,9 @@
     \draw[line width=8mm] (-\xLength, -\xLength) -- (\xLength, \xLength);
     \draw[line width=8mm] (-\xLength,  \xLength) -- (\xLength, -\xLength);
     
-    \node[scale=\smallFont, color=white] at (0mm, 70mm) {\large \textbf{10}};
+    \node[scale=\smallFont, color=white] at (0mm, \textTen) {\large \textbf{10}};
     \node[scale=\largeFont, color=white] at (0mm, \baseOffset+\circleDistance) {\large \textbf{9}};
-    \node[scale=\smallFont, color=white] at (0mm, -70mm) {\large \textbf{10}};
+    \node[scale=\smallFont, color=white] at (0mm, \textTenNeg) {\large \textbf{10}};
     \node[scale=\largeFont, color=white] at (0mm, -\baseOffset-\circleDistance) {\large \textbf{9}};
     
     \draw[line width=2mm] (0cm, 0cm) circle (\circleTen+2*\circleDistance);
