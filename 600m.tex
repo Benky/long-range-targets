@@ -17,6 +17,28 @@
 \newcommand{\textTen}{\baseOffset/2+\circleTen/2}
 \newcommand{\textTenNeg}{-\baseOffset/2-\circleTen/2}
 
+% Red diamond with cross
+\newcommand\benkysCross{
+  \draw[fill=white, color=white] (0cm,0cm) rectangle (10cm,-10cm);
+  \draw[line width=2mm, fill=black] (0cm, 0cm) circle [radius=17mm];
+  \draw[line width=2mm] (0cm, 0cm) circle [radius=64mm]; % << poor man's spacing :-/
+
+  \draw[line width=4mm, color=white] (-10mm, -10mm) -- (10mm, 10mm);
+  \draw[line width=4mm, color=white] (-10mm, 10mm) -- (10mm, -10mm);  
+}
+
+\begin{tikzpicture}
+  \begin{scope}[shift={(5,5)}]
+    \benkysCross
+  \end{scope}
+  \begin{scope}[shift={(25,5)}]
+    \benkysCross
+  \end{scope}
+  \begin{scope}[shift={(45,5)}]
+    \benkysCross
+  \end{scope}
+\end{tikzpicture}
+
 \begin{tikzpicture}
   \begin{scope}[shift={(210mm,300mm)}]
     \draw[line width=2mm, fill=black] (0cm, 0cm) circle (\circleTen+\circleDistance); % 9
