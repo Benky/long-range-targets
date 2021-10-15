@@ -1,0 +1,54 @@
+% Copyright (c) 2013 Benky
+% This program is made available under the terms of the MIT License.
+\documentclass{article}
+\usepackage{tabularx} % in the preamble
+\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[top=50mm,left=10mm,right=0mm,bottom=0mm,a1paper]{geometry}
+\usepackage{verbatim}
+
+\newcommand*{\xMin}{0}%
+\newcommand*{\xMax}{6}%
+\newcommand*{\yMin}{0}%
+\newcommand*{\yMax}{6}%
+
+\tikzset{300mT/.pic={
+    \draw[line width=1mm, fill=white] (0in, 0in) circle (154.5mm);% 5
+    \draw[line width=1mm, fill=white] (0in, 0in) circle (129.5mm);% 6
+    \draw[line width=1mm, fill=white] (0in, 0in) circle (104.5mm);% 7
+    \draw[line width=1mm, fill=white] (0in, 0in) circle (79.5mm);% 8
+
+    \draw[line width=1mm, fill=gray] (0in, 0in) circle (54.5mm);% 9
+    \draw[line width=1mm, fill=gray] (0in, 0in) circle (29.5mm);% 10
+    \draw[line width=1mm, fill=gray] (0in, 0in) circle (12.5mm);% X
+
+    % [START] Draw X
+    \draw[line width=4mm] (-4mm, -4mm) -- (4mm, 4mm);
+    \draw[line width=4mm] (-4mm,  4mm) -- (4mm, -4mm);
+    % [END] Draw X
+
+    % grid
+%    \foreach \i in {\xMin,...,\xMax} {
+%        \draw [very thin,gray] (\i,\yMin) -- (\i,\yMax)  node [below] at (\i,\yMin) {$\i$};
+%    }
+%    \foreach \i in {\yMin,...,\yMax} {
+%        \draw [very thin,gray] (\xMin,\i) -- (\xMax,\i) node [left] at (\xMin,\i) {$\i$};
+%    }
+
+    \draw [step=10.902mm,blue, very thick] (0mm,0mm) grid (163.53mm,163.53mm);
+    \draw [step=10.902mm,blue, very thick] (0mm,0mm) grid (-163.53mm,-163.53mm);
+
+    \draw [step=10.902mm,blue, very thick] (0mm,0mm) grid (-163.53mm,163.53mm);
+    \draw [step=10.902mm,blue, very thick] (0mm,0mm) grid (163.53mm,-163.53mm);
+%    \draw [very thick, brown, step=1.0cm,xshift=-0.5cm, yshift=-0.5cm] (0.5,0.5) grid +(5.5,4.5);
+
+}
+}
+
+\begin{document}
+    \begin{tikzpicture}
+        \begin{scope}[]
+            \pic at (0mm, 0mm) {300mT};
+        \end{scope}
+    \end{tikzpicture}
+\end{document}
