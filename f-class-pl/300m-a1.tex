@@ -4,7 +4,7 @@
 \usepackage{tabularx} % in the preamble
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[top=50mm,left=10mm,right=0mm,bottom=0mm,a1paper]{geometry}
+\usepackage[top=10mm,left=10mm,right=0mm,bottom=0mm,a4paper]{geometry}
 \usepackage{verbatim}
 
 \tikzset{300mT/.pic={
@@ -51,9 +51,11 @@
 }
 
 \begin{document}
-    \begin{tikzpicture}
-        \begin{scope}[]
-            \pic at (0mm, 0mm) {300mT};
-        \end{scope}
-    \end{tikzpicture}
+    \scalebox{0.5}{
+        \begin{tikzpicture}
+            \begin{scope}[]
+                \pic at (0mm, 0mm) {300mT};
+            \end{scope}
+        \end{tikzpicture}
+    }
 \end{document}

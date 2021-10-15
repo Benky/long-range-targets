@@ -4,7 +4,7 @@
 \usepackage{tabularx} % in the preamble
 \usepackage{tikz}
 \usepackage{mathpazo}
-\usepackage[top=50mm,left=10mm,right=0mm,bottom=0mm,a1paper]{geometry}
+\usepackage[top=10mm,left=10mm,right=0mm,bottom=0mm,a4paper]{geometry}
 \usepackage{verbatim}
 
 \tikzset{300mT/.pic={
@@ -33,13 +33,29 @@
     \draw [step=174.448mm,blue, thick] (0mm,0mm) grid (-327.09mm,-327.09mm);
     \draw [step=174.448mm,blue, thick] (0mm,0mm) grid (-327.09mm,327.09mm);
     \draw [step=174.448mm,blue, thick] (0mm,0mm) grid (327.09mm,-327.09mm);
+
+    % Texts
+    \node[scale=7.0, color=white] at (0mm, 42mm) {\large \textbf{10}};
+    \node[scale=7.0, color=white] at (0mm, 84mm) {\large \textbf{9}};
+
+    \node[scale=7.0, color=black] at (   134mm, 0mm) {\large \textbf{8}};
+    \node[scale=7.0, color=black] at (   184mm, 0mm) {\large \textbf{7}};
+    \node[scale=7.0, color=black] at (234mm, 0mm) {\large \textbf{6}};
+    \node[scale=7.0, color=black] at (284mm, 0mm) {\large \textbf{5}};
+
+    \node[scale=7.0, color=black] at (   -134mm, 0mm) {\large \textbf{8}};
+    \node[scale=7.0, color=black] at (   -184mm, 0mm) {\large \textbf{7}};
+    \node[scale=7.0, color=black] at (-234mm, 0mm) {\large \textbf{6}};
+    \node[scale=7.0, color=black] at (-284mm, 0mm) {\large \textbf{5}};
 }
 }
 
 \begin{document}
-    \begin{tikzpicture}
-        \begin{scope}[]
-            \pic at (0mm, 0mm) {300mT};
-        \end{scope}
-    \end{tikzpicture}
+    \scalebox{0.25}{
+        \begin{tikzpicture}
+            \begin{scope}[]
+                \pic at (0mm, 0mm) {300mT};
+            \end{scope}
+        \end{tikzpicture}
+    }
 \end{document}
