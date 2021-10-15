@@ -18,9 +18,9 @@
     \draw[line width=1mm, fill=white] (0in, 0in) circle (104.5mm);% 7
     \draw[line width=1mm, fill=white] (0in, 0in) circle (79.5mm);% 8
 
-    \draw[line width=1mm, fill=gray] (0in, 0in) circle (54.5mm);% 9
-    \draw[line width=1mm, fill=gray] (0in, 0in) circle (29.5mm);% 10
-    \draw[line width=1mm, fill=gray] (0in, 0in) circle (12.5mm);% X
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (54.5mm);% 9
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (29.5mm);% 10
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (12.5mm);% X
 
     % [START] Draw X
     \draw[line width=4mm] (-4mm, -4mm) -- (4mm, 4mm);
@@ -35,11 +35,19 @@
 %        \draw [very thin,gray] (\xMin,\i) -- (\xMax,\i) node [left] at (\xMin,\i) {$\i$};
 %    }
 
+    % Base grid
     \draw [step=10.902mm,black, thick, dashed] (0mm,0mm) grid (163.53mm,163.53mm);
     \draw [step=10.902mm,black, thick, dashed] (0mm,0mm) grid (-163.53mm,-163.53mm);
-
     \draw [step=10.902mm,black, thick, dashed] (0mm,0mm) grid (-163.53mm,163.53mm);
     \draw [step=10.902mm,black, thick, dashed] (0mm,0mm) grid (163.53mm,-163.53mm);
+
+    % 1MoA grid
+    \draw [step=87.216mm,blue, thick] (0mm,0mm) grid (163.53mm,163.53mm);
+    \draw [step=87.216mm,blue, thick] (0mm,0mm) grid (-163.53mm,-163.53mm);
+    \draw [step=87.216mm,blue, thick] (0mm,0mm) grid (-163.53mm,163.53mm);
+    \draw [step=87.216mm,blue, thick] (0mm,0mm) grid (163.53mm,-163.53mm);
+
+
 %    \draw [very thick, brown, step=1.0cm,xshift=-0.5cm, yshift=-0.5cm] (0.5,0.5) grid +(5.5,4.5);
 
 }
