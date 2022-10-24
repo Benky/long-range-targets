@@ -1,0 +1,47 @@
+% Copyright (c) 2013 Benky
+% This program is made available under the terms of the MIT License.
+\documentclass{article}
+\usepackage{tabularx} % in the preamble
+\usepackage{tikz}
+\usepackage{mathpazo}
+\usepackage[top=10mm,left=10mm,right=0mm,bottom=0mm,a4paper]{geometry}
+\usepackage{verbatim}
+
+\tikzset{300mT/.pic={
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (193.5mm);% 8
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (126mm);% 9
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (63mm);% 10
+    \draw[line width=1mm, fill=lightgray] (0in, 0in) circle (31.5mm);% X
+
+    % [START] Draw X
+    \draw[line width=4mm] (-7mm, -7mm) -- (7mm, 7mm);
+    \draw[line width=4mm] (-7mm,  7mm) -- (7mm, -7mm);
+    % [END] Draw X
+
+    % Base grid
+    \draw [step=13.08mm,black, thick, dashed] (0mm,0mm) grid (327.09mm,327.09mm);
+    \draw [step=13.08mm,black, thick, dashed] (0mm,0mm) grid (-327.09mm,-327.09mm);
+    \draw [step=13.08mm,black, thick, dashed] (0mm,0mm) grid (-327.09mm,327.09mm);
+    \draw [step=13.08mm,black, thick, dashed] (0mm,0mm) grid (327.09mm,-327.09mm);
+
+    % 1MoA grid
+    \draw [step=104.66mm,blue, thick] (0mm,0mm) grid (327.09mm,327.09mm);
+    \draw [step=104.66mm,blue, thick] (0mm,0mm) grid (-327.09mm,-327.09mm);
+    \draw [step=104.66mm,blue, thick] (0mm,0mm) grid (-327.09mm,327.09mm);
+    \draw [step=104.66mm,blue, thick] (0mm,0mm) grid (327.09mm,-327.09mm);
+
+    % Texts
+    \node[scale=7.0, color=white] at (0mm, 42mm) {\large \textbf{10}};
+    \node[scale=7.0, color=white] at (0mm, 84mm) {\large \textbf{9}};
+}
+}
+
+\begin{document}
+    \scalebox{0.25}{
+        \begin{tikzpicture}
+            \begin{scope}[]
+                \pic at (0mm, 0mm) {300mT};
+            \end{scope}
+        \end{tikzpicture}
+    }
+\end{document}
